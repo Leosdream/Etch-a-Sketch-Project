@@ -7,7 +7,9 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+   
     <button id="btn"> Delete </button>
+     <button id="rgb" onclick="RGB()"> RGB </button>
     
     <input
   type="text"
@@ -21,6 +23,10 @@
 
   <div class="container" id="container"></div>
     <script>
+        let rgb = document.querySelector("#rgb");
+
+       
+
 
         function Click(){
             
@@ -81,7 +87,7 @@ btn.addEventListener("click", function(){ div2.style.backgroundColor = "";; });
 
     }
 
-    buildGrid(16);
+    buildGrid(32);
    
 
         </script>
