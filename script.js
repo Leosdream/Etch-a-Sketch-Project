@@ -1,19 +1,15 @@
 function gridMake(n){
 for (let i=1;i<=n;i++){
-const col = document.createElement("div");
-              container.appendChild(col);
-              col.className = 'col'
-              
-  for( let j=1;j<=n;j++){
+  const col = document.createElement("div");
+  container.appendChild(col);
+  col.className = 'col'
+  for(let j=1;j<=n;j++){
     const row = document.createElement("div");
-              col.appendChild(row);
-              row.className = 'row';
-        
-              row.addEventListener("mouseover", (event) => {
-                row.style.backgroundColor = random_rgba();
-              })
-              Delete.addEventListener("click", function(){ row.style.backgroundColor = "";; });
-              
+    col.appendChild(row);
+    row.className = 'row';
+    row.addEventListener("mouseover", (event) => {
+    row.style.backgroundColor = random_rgba();})
+    Delete.addEventListener("click", function(){ row.style.backgroundColor = "";});
     }
   }
 }
@@ -23,7 +19,7 @@ function gridSize(){
 let size = parseInt(document.getElementById("size").value);
 if(size>=4 && size<=100){ x=size;}
   if(size>100 || size<4){
-     size=x;
+    size=x;
     alert("Error number can't be bigger then 100 or smaller then 4")
    } 
 container.innerHTML = '';
@@ -37,8 +33,4 @@ let max=1;
     return 'rgba(' + o(r()*s) + ',' + o(r()*s) + ',' + o(r()*s) + ',' + r().toFixed(1) + ')';
   } else {return "red";}
 }
-
-
-
-
 gridMake(16);
