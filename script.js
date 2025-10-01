@@ -1,0 +1,65 @@
+let rgb = document.querySelector("#rgb");
+
+       
+
+
+        function Click(){
+            
+             size = parseInt(document.getElementById("size").value);
+             if(size>100){
+                size=16;
+                alert("Error number can't be bigger then 100")
+             }
+ container.innerHTML = '';
+   buildGrid(size)
+        }
+
+        function random_rgba() {
+    var o = Math.round, r = Math.random, s = 255;
+    return 'rgba(' + o(r()*s) + ',' + o(r()*s) + ',' + o(r()*s) + ',' + r().toFixed(1) + ')';
+}
+
+var color = random_rgba();
+      
+        container=document.querySelector("#container");
+        btn= document.querySelector("#btn");
+
+function buildGrid(n){
+        for(i=1;i<=n;i++){
+           
+            let div1=document.createElement("div");
+                div1.classList.add("divCol");
+               container.append(div1);
+                
+        
+               
+
+            for(j=1;j<=n;j++){
+               let div2=document.createElement("div");
+                div2.classList.add("divRow");
+               div2.textContent="x";
+               div1.append(div2);
+
+                div2.addEventListener("mouseenter", (event) => { let color=random_rgba();
+  // highlight the mouseenter target
+  div2.style.backgroundColor = color;
+  div2.style.opacity = "0.5";
+
+  for(let w=0.6; w<=1; w=w+0.1){
+  setTimeout(() => {
+    div2.style.opacity = w;
+  }, 200);}
+  
+});
+
+btn.addEventListener("click", function(){ div2.style.backgroundColor = "";; });
+
+
+
+
+            }
+        }
+
+    }
+
+    buildGrid(32);
