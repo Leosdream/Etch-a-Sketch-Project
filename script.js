@@ -1,8 +1,4 @@
 let rgb = document.querySelector("#rgb");
-
-       
-
-
         function Click(){
             
              size = parseInt(document.getElementById("size").value);
