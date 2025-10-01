@@ -8,12 +8,16 @@ const col = document.createElement("div");
     const row = document.createElement("div");
               col.appendChild(row);
               row.className = 'row';
-              row.addEventListener("mouseover", (event) => {row.style.backgroundColor = "red";})
+        
+              row.addEventListener("mouseover", (event) => {
+                row.style.backgroundColor = random_rgba();
+              })
               Delete.addEventListener("click", function(){ row.style.backgroundColor = "";; });
               
     }
   }
 }
+
 x=16;
 function gridSize(){
 let size = parseInt(document.getElementById("size").value);
@@ -25,6 +29,16 @@ if(size<=100){ x=size;}
 container.innerHTML = '';
 gridMake(size);
 }
+
+let max=1;
+ function random_rgba() {
+  if(max%2==0){
+    var o = Math.round, r = Math.random, s = 255;
+    return 'rgba(' + o(r()*s) + ',' + o(r()*s) + ',' + o(r()*s) + ',' + r().toFixed(1) + ')';
+  } else {return "red";}
+}
+
+
 
 
 gridMake(16);
